@@ -17,14 +17,18 @@
       <div class="nav">
         <div class="nav-text">Home</div>
         <div class="nav-text">Profile</div>
-        <div class="nav-text" id="discover-nav"><span id="discover-span">d</span>Discover</div>
+        <div class="nav-text" id="discover-nav">
+          <span id="discover-span">d</span>Discover
+        </div>
         <div class="nav-text">Charts</div>
       </div>
       <div class="glass">
         <div class="img-profile">
           <div class="img-container">
-            <img src="imgOne.webp" alt="" />
+            <img id="main-img" src="imgTwo.jpeg" alt="" />
           </div>
+          <img id="play-btn" src="play.png" alt="" />
+          <div id="play-track"></div>
           <!-- <p>Redbone</p> -->
         </div>
         <div class="icon-container">
@@ -66,8 +70,8 @@
           rgba(255, 255, 255, 0.4),
           rgba(255, 255, 255, 0.2)
         );
-        border-radius: 2rem .2rem 2rem .2rem;
-        backdrop-filter: blur(2rem);
+        border-radius: 2rem 0.2rem 2rem 0.2rem;
+        backdrop-filter: blur(3rem);
         z-index: 2;
         display: flex;
         flex-direction: column;
@@ -77,20 +81,27 @@
       }
 
       .circle1 {
+        top: 20%;
+        right: 30%;
         background: white;
-        background: linear-gradient(
+        /* background: linear-gradient(
           to right bottom,
           rgba(255, 255, 255, 0.9),
           rgba(255, 255, 255, 0.8)
-        );
+        ); */
         height: 15rem;
         width: 15rem;
         position: absolute;
         border-radius: 50% 0% 50% 0%;
+        -moz-transition: background 0.5s ease-in;
+        -o-transition: background 0.5s ease-in;
+        -webkit-transition: background 0.5s ease-in;
+        transition: background 0.5s ease-in;
+        animation: colors 4s infinite alternate;
       }
-      .circle1 {
-        top: 20%;
-        right: 30%;
+      .circle1:hover {
+        /* background: linear-gradient(90deg, #00ff77 0%, #01a257 100%); */
+        background: #00ff77;
       }
 
       .img-container {
@@ -104,7 +115,7 @@
         box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
       }
 
-      img {
+      #main-img {
         width: 300px;
         height: 300px;
         border-radius: 2rem;
@@ -122,14 +133,14 @@
       .icon-back {
         background: rgba(255, 255, 255, 0.8);
         /* border-radius: 1.5rem 0rem 1.5rem 0; */
-        border-radius: 1.5rem 1.5rem 1.5rem 0rem;
+        border-radius: 4rem 0rem 4rem 0rem;
         box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
       }
 
       .iconImg {
         width: 30px;
         height: 30px;
-        margin: 10px 120px;
+        margin: 10px 90px;
       }
 
       p {
@@ -140,8 +151,20 @@
 
       .nav-text {
         color: white;
+        cursor: pointer;
         font-weight: 100;
         font-size: 4rem;
+      }
+      @keyframes colors {
+        from {
+          background-color: white;
+        }
+        to {
+          background-color: #00ff77;
+        }
+      }
+      .nav-text:hover {
+        color: #00ff77;
       }
 
       .nav {
@@ -164,6 +187,23 @@
 
       #discover-span {
         color: black;
+      }
+
+      #play-btn {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        bottom: 8%;
+        left: 35%;
+      }
+      #play-track {
+        position: absolute;
+        width: 160px;
+        height: 5px;
+        background-color: #000000;
+        bottom: 10.5%;
+        left: 42%;
+        border-radius: 1rem;
       }
     </style>
   </body>
